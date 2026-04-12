@@ -152,23 +152,22 @@ h1, h2, h3, h4, .font-serif {
 
 /* Hero Section */
 .hero-section {
-    height: 100vh;
+    min-height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    background-image: 
+        linear-gradient(rgba(100,101,64,0.3), rgba(0,0,0,0.3)),
+        url("hero.png");
+
+    background-size: cover;
+    background-position: center 50%;
 }
 
 .hero-bg {
-    background-image: 
-        linear-gradient(
-    rgba(97, 100, 50, 0.4),
-    rgba(0, 0, 0, 0.2)
-    ),
-        url("hero.png");
-    background-size: cover;
-    background-position: center;
     background-attachment: fixed;
 }
 
