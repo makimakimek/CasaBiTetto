@@ -161,7 +161,12 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .hero-bg {
-    background-image: linear-gradient(rgba(100, 101, 64, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-image: 
+        linear-gradient(
+    rgba(97, 100, 50, 0.4),
+    rgba(0, 0, 0, 0.2)
+    ),
+        url("hero.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
