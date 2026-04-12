@@ -1,0 +1,569 @@
+:root {
+            /* Orijinal marka renklerine sadık kalındı */
+            --bitetto-dark: #646540;
+            --bitetto-green: #7c8653;
+            --bitetto-gold: #e3b94d;
+            --bitetto-cream: #fef1db;
+            --white: #ffffff;
+            
+            --font-heading: "Myriad Pro", "Segoe UI", Helvetica, Arial, sans-serif
+            --font-body: 'Lato', sans-serif;
+            
+            --fine-line: 1px solid var(--bitetto-dark);
+            --fine-line-gold: 1px solid var(--bitetto-gold);
+        }
+
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--bitetto-dark);
+            background-color: var(--bitetto-cream); /* Ana arka plan krem */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+
+        .selection-gold::selection { background-color: var(--bitetto-gold); color: var(--white); }
+        ::-moz-selection { background-color: var(--bitetto-gold); color: var(--white); }
+
+        .container {
+            max-width: 1100px; /* Daha dar, daha editoryal bir okuma alanı */
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Klasik Çizgili Navbar */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 50;
+            background: var(--bitetto-cream);
+            border-bottom: var(--fine-line);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(100, 101, 64, 0.1);
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4.5rem;
+        }
+
+        .logo-img {
+            height: 3.5rem;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .desktop-menu {
+            display: none;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        @media (min-width: 768px) { .desktop-menu { display: flex; } }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--bitetto-dark);
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover { color: var(--bitetto-gold); }
+
+        .nav-cta {
+            text-decoration: none;
+            color: var(--bitetto-dark);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: var(--fine-line);
+            padding: 0.4rem 1.5rem;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--bitetto-dark);
+            color: var(--bitetto-cream);
+        }
+
+        /* Mobile Menu */
+        .mobile-toggle { background: none; border: none; color: var(--bitetto-dark); font-size: 2rem; cursor: pointer; }
+        @media (min-width: 768px) { .mobile-btn-area { display: none; } }
+
+        .mobile-menu {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 100%; left: 0; width: 100%;
+            background: var(--bitetto-cream);
+            border-bottom: var(--fine-line);
+            flex-direction: column;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            text-decoration: none; color: var(--bitetto-dark);
+            padding: 1rem; font-family: var(--font-heading); font-size: 1.4rem;
+            border-bottom: 1px dashed rgba(100, 101, 64, 0.2);
+        }
+        .mobile-menu a:last-child { border-bottom: none; }
+
+        /* Art-Gallery Style Hero */
+        .hero-section {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+            text-align: center;
+            border-bottom: var(--fine-line);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            color: var(--bitetto-gold);
+            font-family: var(--font-body);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            border-top: 1px solid var(--bitetto-gold);
+            border-bottom: 1px solid var(--bitetto-gold);
+            padding: 0.5rem 0;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            color: var(--bitetto-dark);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (min-width: 768px) { .hero-title { font-size: 5.5rem; } }
+
+        .italic-gold {
+            font-style: italic;
+            color: var(--bitetto-gold);
+            text-transform: none;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--bitetto-dark);
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* The "Arch" Image Concept */
+        .hero-arch-container {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-arch-image {
+            width: 100%;
+            height: 60vh;
+            min-height: 300px;
+            object-fit: cover;
+            /* Bu kemer (arch) şeklini verir */
+            border-radius: 300px 300px 0 0;
+            border: var(--fine-line);
+            padding: 0.5rem; /* İnce bir iç çerçeve etkisi */
+            background: var(--bitetto-cream);
+        }
+
+        .hero-actions {
+            margin-top: 0rem; /* Arch görselinin üzerine bindirilir */
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--bitetto-cream); /* Butonları arka plandan ayırmak için */
+        }
+
+        .btn-gold-solid {
+            background: var(--bitetto-gold);
+            color: var(--white);
+            border: 1px solid var(--bitetto-gold);
+        }
+
+        .btn-gold-solid:hover {
+            background: var(--bitetto-dark);
+            border-color: var(--bitetto-dark);
+        }
+
+        .btn-outline {
+            border: var(--fine-line);
+            color: var(--bitetto-dark);
+        }
+
+        .btn-outline:hover {
+            background: var(--bitetto-dark);
+            color: var(--bitetto-cream);
+        }
+
+        /* Minimalist Line-Separated Features */
+        .stars-section {
+            padding: 6rem 0;
+            background: var(--white);
+            border-bottom: var(--fine-line);
+        }
+
+        .section-header-center {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--bitetto-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .section-desc {
+            margin-top: 1rem;
+            color: var(--bitetto-dark);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .features-grid-lined {
+            display: grid;
+            grid-template-columns: 1fr;
+            border-top: var(--fine-line);
+        }
+
+        @media (min-width: 768px) {
+            .features-grid-lined {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-box {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: var(--fine-line);
+        }
+
+        @media (min-width: 768px) {
+            .feature-box {
+                border-bottom: none;
+                border-right: var(--fine-line);
+            }
+            .feature-box:last-child {
+                border-right: none;
+            }
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--bitetto-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-box p {
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Coming Soon Banner - Thin Borders */
+        .coming-soon-banner {
+            margin-top: 5rem;
+            border: var(--fine-line);
+            padding: 0.5rem;
+        }
+        
+        .cs-inner {
+            border: var(--fine-line);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .cs-inner { flex-direction: row; }
+        }
+
+        .cs-img {
+            height: 250px;
+            width: 100%;
+            border-bottom: var(--fine-line);
+        }
+
+        @media (min-width: 768px) {
+            .cs-img { width: 40%; height: auto; border-bottom: none; border-right: var(--fine-line); }
+        }
+
+        .cs-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .cs-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--bitetto-cream);
+        }
+
+        .cs-label {
+            color: var(--bitetto-gold);
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cs-content h3 { font-size: 2.2rem; margin-bottom: 1rem; }
+        .cs-content p { font-weight: 300; margin-bottom: 1.5rem; }
+
+        /* Essence Section - Offset Frame */
+        .essence-section {
+            padding: 8rem 0;
+            background: var(--bitetto-cream);
+        }
+
+        .essence-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .essence-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .image-frame-offset {
+            position: relative;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .frame-border {
+            position: absolute;
+            top: 2rem; left: 2rem; right: 0; bottom: 0;
+            border: var(--fine-line);
+            z-index: 1;
+        }
+
+        .main-essence-img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            /* Filter effect for a vintage film look */
+            filter: sepia(0.2) contrast(1.1);
+        }
+
+        .essence-text-area {
+            position: relative;
+        }
+
+        .mini-melek {
+            position: absolute;
+            top: -2rem; right: 0;
+            height: 6rem;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .sub-label {
+            font-family: var(--font-body);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            font-size: 0.8rem;
+            color: var(--bitetto-gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .essence-text-area h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .essence-content p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Drop cap for first letter */
+        .essence-content p:first-child::first-letter {
+            float: left;
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-right: 0.5rem;
+            color: var(--bitetto-gold);
+        }
+
+        .link-classic {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--bitetto-dark);
+            text-decoration: none;
+            border-bottom: 1px solid var(--bitetto-dark);
+            padding-bottom: 2px;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .link-classic:hover {
+            color: var(--bitetto-gold);
+            border-color: var(--bitetto-gold);
+        }
+
+        /* Buy Section - Double Line Borders */
+        .buy-section {
+            padding: 8rem 0;
+            background: var(--bitetto-dark);
+            color: var(--bitetto-cream);
+            border-top: 4px double var(--bitetto-gold);
+        }
+
+        .buy-section .section-title { color: var(--bitetto-cream); }
+        .buy-section .section-desc { color: rgba(254, 241, 219, 0.8); }
+
+        .buy-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .buy-cards { grid-template-columns: 1fr 1fr; }
+        }
+
+        .buy-card {
+            border: 1px solid rgba(254, 241, 219, 0.3);
+            padding: 0.5rem;
+        }
+
+        .buy-card-inner {
+            border: 1px solid rgba(254, 241, 219, 0.3);
+            padding: 3rem 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .buy-card i { font-size: 3rem; color: var(--bitetto-gold); margin-bottom: 1rem; }
+        .buy-card h4 { font-size: 2rem; margin-bottom: 1rem; }
+        .buy-card p { font-family: var(--font-body); font-weight: 300; opacity: 0.8; margin-bottom: 2rem; }
+
+        .btn-gold-outline {
+            border: 1px solid var(--bitetto-gold);
+            color: var(--bitetto-gold);
+            padding: 0.8rem 2rem;
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-gold-outline:hover {
+            background: var(--bitetto-gold);
+            color: var(--bitetto-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--white);
+            padding: 5rem 0 2rem;
+            border-top: var(--fine-line);
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-logo-img { height: 5rem; margin-bottom: 2rem; }
+        
+        .footer-tagline {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-style: italic;
+            max-width: 500px;
+            margin: 0 auto 3rem;
+        }
+
+        .social-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 4rem; }
+        .social-links a {
+            color: var(--bitetto-dark);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover { color: var(--bitetto-gold); }
+
+        .footer-bottom {
+            border-top: var(--fine-line);
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .watermark-melek {
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            height: 300px;
+            opacity: 0.03;
+            pointer-events: none;
+        }

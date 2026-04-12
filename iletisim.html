@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiTetto | Doğanın Kalbinden Sofranıza</title>
+    
+    <!-- Fonts & Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-THGYSX34BW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-THGYSX34BW');
+</script>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo-area">
+                <a href="/">
+                    <img src="logo-el-yazisi.png" alt="BiTetto" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.jp/24/646540/ffffff/200x60.png?text=BiTetto+El+Yazısı';">
+                </a>
+            </div>
+            
+            <div class="desktop-menu">
+                <a href="/" class="nav-link">Ana Sayfa</a>
+                <a href="/urunlerimiz.html" class="nav-link">Ürünlerimiz</a>
+                <a href="/hikayemiz.html" class="nav-link">Hikayemiz</a>
+                <a href="/iletisim.html" class="nav-cta">İletişim</a>
+            </div>
+
+            <div class="mobile-btn-area">
+                <button id="mobile-menu-btn" class="mobile-toggle">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="/">Ana Sayfa</a>
+            <a href="/urunlerimiz.html">Ürünlerimiz</a>
+            <a href="/hikayemiz.html">Hikayemiz</a>
+            <a href="/iletisim.html">İletişim</a>
+        </div>
+    </nav>
+
+     <!-- Hero Alanı -->
+    <header class="contact-hero">
+        <img src="hero8.jpg" class="story-bg-img" alt="">
+        <div class="hero-content">
+            <h1>Bizimle İletişime Geçin</h1>
+            <p><i>Ege'nin saf şifasını sofralarınıza taşımak için buradayız</i></p>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="contact-intro-section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text-area">
+                    <div class="title-line"></div>
+                    <h2>Her Damlasında <br>Bir Hikaye Var</h2>
+                    <p>Mahsullerimiz veya markamız hakkında sormak istediğiniz her şey için bize doğrudan ulaşabilirsiniz.</p>
+                    <div class="social-elegant">
+                        <a href="https://www.instagram.com/casabitetto/" target="_blank"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="https://www.facebook.com/people/Casa-Bitetto/61584888794690/" target="_blank"><i class="ph ph-facebook-logo"></i></a>
+                    </div>
+                </div>
+
+                <div class="minimal-contact-list">
+                    <a href="https://wa.me/905327950551" class="minimal-contact-item" target="_blank">
+                        <i class="ph-light ph-whatsapp-logo"></i>
+                        <div><h4>WhatsApp</h4><p>+90 (532) 795 05 51</p></div>
+                    </a>
+                    <a href="mailto:info@casabitetto.com" class="minimal-contact-item">
+                        <i class="ph-light ph-envelope-simple"></i>
+                        <div><h4>E-Posta Adresimiz</h4><p>info@casabitetto.com</p></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Harita ve Lüks Adres Kartı Bölümü -->
+    <section class="map-section">
+        
+        <div class="map-viewport">
+            <!-- Harita 1: Satış Noktası (Urla Zeytinler) -->
+            <div id="map-store" class="map-frame active">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25081.99616254093!2d26.586616611311037!3d38.21448839077926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb9cb093ff9a3d%3A0xc480c5ceb39d1b64!2sZeytinler%2C%2035430%20Urla%2F%C4%B0zmir!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <!-- Harita 2: Depo (Urla Lojistik Bölgesi) -->
+            <div id="map-warehouse" class="map-frame">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50153.84365738601!2d26.711818169123682!3d38.29177114173873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb9783f9801825%3A0x63351ec1099b2f67!2sUrla%2F%C4%B0zmir!5e0!3m2!1str!2str!4v1700000000001!5m2!1str!2str" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="floating-address-card">
+                
+                <!-- Adres Bloğu 1 -->
+                <div id="block-store" class="address-block highlighted" onclick="switchMap('store')">
+                    <span class="click-hint">Haritada Gör</span>
+                    <h3><i class="ph-light ph-storefront"></i> Satış Noktası</h3>
+                    <p>Zeytinler Köyü, Merkez Mevkii<br>Urla / İzmir, Türkiye</p>
+                    <span class="note">"Bir fincan kahve eşliğinde taze mahsullerimizi denemek için her zaman bekleriz."</span>
+                </div>
+
+                <!-- Adres Bloğu 2 -->
+                <div id="block-warehouse" class="address-block" onclick="switchMap('warehouse')">
+                    <span class="click-hint">Haritada Gör</span>
+                    <h3><i class="ph-light ph-package"></i> Lojistik & Depo</h3>
+                    <p>Urla Lojistik ve Ticaret Bölgesi<br>No: 35, İzmir, Türkiye</p>
+                    <span class="note">Online siparişleriniz bu merkezden özenle hazırlanıp kargolanmaktadır.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#">
+                    <img src="logo-el-yazisi.png" alt="BiTetto" class="footer-logo" onerror="this.onerror=null; this.src='https://placehold.jp/18/646540/ffffff/150x45.png?text=BiTetto';">
+                </a>
+                <p class="footer-tagline">Asırlık ağaçların bilgeliğini ve toprağın en saf mucizesini, her damlada doğallık sözüyle sofralarınıza taşıyoruz.</p>
+            </div>
+
+            <div class="social-links">
+                    <a href="https://www.instagram.com/casabitetto/" target="_blank"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="https://www.facebook.com/people/Casa-Bitetto/61584888794690/" target="_blank"><i class="ph-fill ph-facebook-logo"></i></a>
+                </div>
+        </div>
+
+        <!-- Watermark Angel Logo -->
+        <div class="footer-watermark">
+            <img src="melek-logo.png" alt="BiTetto Melek" class="giant-melek" onerror="this.style.display='none'">
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 BiTetto Zeytinyağları. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    </body>
+</html>
