@@ -822,7 +822,7 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .giant-melek {
-    height: 30vw;
+    height: 25vw;
     opacity: 1; /* Orjinal kodda 1 idi */
     transform-origin: bottom right;
 }
