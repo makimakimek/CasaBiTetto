@@ -454,6 +454,7 @@ h1, h2, h3, h4, .font-serif {
     border-radius: 9999px;
     cursor: pointer;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
 .btn-outline-gold:hover {
@@ -804,13 +805,13 @@ h1, h2, h3, h4, .font-serif {
 
 .footer-watermark {
     position: absolute;
-    top: 0.7rem;
+    top: 2rem;
     right: 1rem;
     pointer-events: none;
     z-index: 10;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .footer-watermark {
         /* Üstten değil alttan hizalamaya devam ediyoruz */
         top: auto;
@@ -821,9 +822,17 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .giant-melek {
-    height: 300px;
+    height: 30vw;
     opacity: 1; /* Orjinal kodda 1 idi */
     transform-origin: bottom right;
+}
+
+@media (min-width: 1024px) {
+    .giant-melek {
+        height: 20vw;
+        opacity: 1; /* Orjinal kodda 1 idi */
+        transform-origin: bottom right;
+    }
 }
 
 .footer-bottom {
