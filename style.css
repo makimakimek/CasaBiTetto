@@ -150,7 +150,6 @@ h1, h2, h3, h4, .font-serif {
     display: none;
 }
 
-/* Hero Section */
 .hero-section {
     min-height: 100vh;
     height: 100dvh;
@@ -164,11 +163,14 @@ h1, h2, h3, h4, .font-serif {
         url("hero.png");
 
     background-size: cover;
-    background-position: center 50%;
+    background-position: center center; 
+    background-repeat: no-repeat;
 }
 
-.hero-bg {
-    background-attachment: fixed;
+@media (min-width: 768px) {
+    .hero-bg {
+        background-attachment: fixed;
+    }
 }
 
 .hero-content {
@@ -1005,16 +1007,17 @@ h1, h2, h3, h4, .font-serif {
             line-height: 1.7;
         }
     
-    .products-split-container {
+        .products-split-container {
             display: flex;
             flex-direction: column;
             padding-top: 5rem; /* Navbar boşluğu */
+            min-height: 100vh;
         }
 
         @media (min-width: 1024px) {
             .products-split-container {
                 flex-direction: row;
-                padding-top: 3rem;
+                padding-top: 4rem;
             }
         }
 
@@ -1023,35 +1026,62 @@ h1, h2, h3, h4, .font-serif {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 4rem 2rem;
+            align-items: flex-start; /* Mobilde ve tablette sola hizalama garantisi */
+            padding: 2rem 2rem;
             position: relative;
             transition: all 0.5s ease;
+            background-color: var(--white);
+        }
+
+        @media (min-width: 768px) {
+            .product-half {
+                padding: 2rem 3rem;
+            }
         }
 
         @media (min-width: 1024px) {
-            .product-half { padding: 4rem 4rem; overflow-y: auto; }
+            .product-half { 
+                padding: 2rem 4rem; 
+            }
         }
 
-        /* Sol Taraf: Zeytinyağı */
-        .olive-oil-side {
-            background-color: var(--white);
-        }
-
-        /* Sağ Taraf: Sabun */
+        /* --- Sınır Çizgileri Mantığı --- */
+        
+        /* Mobil ve Tablet: Alt alta olduklarında üsttekine çizgi eklemiyoruz, 
+           alttakinin (sabun) tepesine yatay çizgi ekliyoruz */
         .soap-side {
-            background-color: var(--white);
-            border-left: 1px solid var(--bitetto-gold);
+            border-top: 1px solid var(--bitetto-gold);
+            border-left: none; /* Mobilde dikey çizgiyi kaldır */
         }
 
+        /* Masaüstü: Yan yana olduklarında yatay çizgiyi kaldır, 
+           sol taraftakinin (zeytinyağı) sağına dikey çizgi ekle */
         @media (min-width: 1024px) {
             .olive-oil-side {
-                border-bottom: none;
                 border-right: 1px solid var(--bitetto-gold);
+                border-bottom: none;
             }
 
             .soap-side {
+                border-top: none;
                 border-left: none;
             }
+        }
+
+        /* Rozet ve Etiket Hizalamaları */
+        .coming-soon-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bitetto-dark);
+            color: var(--bitetto-cream);
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            align-self: flex-start; /* Rozetin genişlemesini engeller */
         }
 
         .product-tag {
@@ -1062,13 +1092,15 @@ h1, h2, h3, h4, .font-serif {
             font-size: 0.85rem;
             margin-bottom: 1rem;
             display: block;
+            text-align: left;
         }
 
         .product-title {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             color: var(--bitetto-dark);
             line-height: 1.1;
             margin-bottom: 1.5rem;
+            text-align: left;
         }
 
         .product-desc {
@@ -1076,66 +1108,68 @@ h1, h2, h3, h4, .font-serif {
             color: var(--text-gray);
             margin-bottom: 2.5rem;
             max-width: 500px;
+            text-align: left;
         }
 
-        /* İkonlu Özellikler */
+        /* İkonlu Özellikler Grid Sistemi */
         .features-list {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 1.5rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        @media (min-width: 480px) {
+            .features-list {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         .feature-item {
             display: flex;
             gap: 1rem;
+            text-align: left;
         }
 
         .feature-item i {
             font-size: 1.5rem;
             color: var(--bitetto-gold);
             flex-shrink: 0;
+            margin-top: 0.2rem;
         }
 
         .feature-item h4 {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--bitetto-dark);
             margin-bottom: 0.2rem;
         }
 
         .feature-item p {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-gray);
             line-height: 1.4;
         }
 
         /* Görsel Alanları */
         .product-visual {
-            margin-top: 0rem;
+            margin-top: auto;
             border-radius: 1.5rem;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             width: 100%;
-            height: 300px;
+            height: 350px;
         }
 
         .product-visual img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.8s ease;
         }
 
-        /* Sabun Yakında Yazısı */
-        .coming-soon-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--bitetto-dark);
-            color: var(--bitetto-cream);
-            padding: 0.5rem 1.2rem;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            margin-bottom: 2rem;
+        .product-half:hover .product-visual img {
+            transform: scale(1.05);
         }
 
 .contact-hero {
